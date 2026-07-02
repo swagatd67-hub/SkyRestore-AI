@@ -2,6 +2,7 @@ import os
 import shutil
 
 from fastapi import APIRouter, UploadFile, File
+from fastapi.responses import FileResponse
 
 from app.services.cloud_service import CloudRemovalService
 
@@ -15,6 +16,7 @@ service = CloudRemovalService()
 
 @router.get("/health")
 def health():
+
     return {
         "status": "Cloud AI Ready"
     }
@@ -23,14 +25,20 @@ def health():
 @router.post("/remove")
 async def remove_clouds(file: UploadFile = File(...)):
 
-    # Create uploads folder
     os.makedirs("app/uploads", exist_ok=True)
 
-    # Save uploaded image
-    file_path = os.path.join("app/uploads", file.filename)
+    file_path = os.path.join(
+        "app/uploads",
+        file.filename
+    )
 
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    # Pass FULL PATH to AI engine
-    return service.remove_clouds(file_path)
+    output = service.remove_clouds(file_path)
+
+    return FileResponse(
+        output,
+        media_type="image/jpeg",
+        filename="clean_image.jpg"
+    )
