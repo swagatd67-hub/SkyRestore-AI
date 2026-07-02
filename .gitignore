@@ -1,0 +1,38 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Python cache
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Outputs
+app/uploads/*
+app/outputs/*
+
+# Keep folders
+!app/uploads/.gitkeep
+!app/outputs/.gitkeep
+
+# Large AI Models
+*.pth
+*.pt
+*.ckpt
+
+# DiffCR Repository
+DiffCR/
+
+# OS Files
+Thumbs.db
+.DS_Store
