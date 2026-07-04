@@ -3,8 +3,9 @@ venv/
 __pycache__/
 *.pyc
 
-# Environment
+# Environment files
 .env
+**/.env
 
 # IDE
 .vscode/
