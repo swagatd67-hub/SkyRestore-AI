@@ -1,39 +1,88 @@
+# ===========================
+# Environment Files
+# ===========================
+.env
+.env.*
+**/.env
+**/.env.*
+
+# ===========================
+# Node / Angular
+# ===========================
+node_modules/
+.angular/
+dist/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===========================
+# Java / Spring Boot
+# ===========================
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+
+# ===========================
 # Python
+# ===========================
 venv/
+.venv/
 __pycache__/
 *.pyc
-
-# Environment files
-.env
-**/.env
-
-# IDE
-.vscode/
-.idea/
-
-# Python cache
 *.pyo
 *.pyd
+.pytest_cache/
 
-# Logs
-*.log
+# ===========================
+# AI Uploads & Outputs
+# ===========================
+ai-service/app/uploads/*
+ai-service/app/outputs/*
 
-# Outputs
-app/uploads/*
-app/outputs/*
+!ai-service/app/uploads/.gitkeep
+!ai-service/app/outputs/.gitkeep
 
-# Keep folders
-!app/uploads/.gitkeep
-!app/outputs/.gitkeep
-
+# ===========================
 # Large AI Models
-*.pth
+# ===========================
 *.pt
+*.pth
 *.ckpt
+*.onnx
 
-# DiffCR Repository
-DiffCR/
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
 
-# OS Files
-Thumbs.db
+# ===========================
+# IDE
+# ===========================
+.vscode/
+.idea/
+*.iml
+
+# ===========================
+# Operating System
+# ===========================
 .DS_Store
+Thumbs.db
+
+# ===========================
+# Temporary Files
+# ===========================
+*.tmp
+*.bak
+*.swp
+
+# ===========================
+# Documentation Assets
+# ===========================
+docs/screenshots/*.psd
+docs/screenshots/*.ai
